@@ -1,0 +1,13 @@
+{% extends 'amazon/layout.html'%}{% block title%}
+<title>Amazon | Login</title>
+{% endblock %} {% block body%}
+
+<body>
+    <h1>Login</h1>
+    <form action="{% url 'amazon:login'%}" method="post">
+        {%csrf_token%}{{form}}
+        <input type="submit" value="Login">
+    </form>
+</body>
+
+{% endblock%}

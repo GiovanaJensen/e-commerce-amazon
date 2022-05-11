@@ -1,0 +1,12 @@
+{% extends "amazon/layout.html"%} {% block title%}
+<title>Amazon | Home</title>
+{%endblock%} {% block body %}
+
+<body>
+    {% if session.usuario != None %}
+    <h1>Olá, {{session.usuario}}!</h1>
+    {% else %}
+    <h1>Olá, visitante!</h1>
+    <a href="{% url 'amazon:login'%}">Olá, Faça seu login</a> {% endif %}
+</body>
+{%endblock%}
