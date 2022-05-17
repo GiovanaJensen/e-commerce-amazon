@@ -2,12 +2,13 @@
 <title>Amazon | Login</title>
 {% endblock %} {% block body%}
 
-<body>
     <h1>Login</h1>
+    {%if mensagem%}
+        <h4>{{mensagem}}</h4>
+    {%endif%}
     <form action="{% url 'amazon:login'%}" method="post">
         {%csrf_token%}{{form}}
         <input type="submit" value="Login">
     </form>
-</body>
-
+    <a href="{%url 'amazon:cadastro'%}">Ainda não tem uma conta? Cadastre-se</a>
 {% endblock%}
